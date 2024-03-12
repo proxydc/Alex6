@@ -72,7 +72,10 @@ export default {
       axios.get(url).then(res => {
         console.log(res.data);
         if (res.status == 200)
+         { 
           this.model.account = res.data[0];
+          this.model.account.pass_word = "";
+         }
         if (res.status == 203) {
           this.error = res.data;
         }
