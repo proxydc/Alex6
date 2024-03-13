@@ -19,6 +19,7 @@ CREATE TABLE account(
     pass_word VARCHAR(128) NOT NULL,
 	role_id INTEGER NOT NULL
 );
+INSERT INTO account(login_name, display_name, pass_word, role_id) VALUES('Alex', 'Alex', '$2b$10$Us5z/5AHLJ7bgZv15XR7QeZLWGI0IXIEPdO.dHs2ab3xpYsg0x/L2', 1); -- pass_word:12345
 
 CREATE TABLE dc_status(
     id INT PRIMARY KEY,
