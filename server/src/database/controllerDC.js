@@ -98,11 +98,7 @@ const addDC = (req, res) => {
                     res.status(202).send("Candidat already exists.");
                 } else {
                     //add DC to db
-                    let initialDocument = docTemplate.GetDocTemp(
-                        familyname,
-                        firstname,
-                        email
-                    );
+                    let initialDocument = docTemplate.GetDocTemp();
                     pool.query(
                         queries.addDC, [familyname, firstname, email, dcStatus, initialDocument, manager_id, creation_date, modification_date],
                         (error, results) => {
