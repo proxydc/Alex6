@@ -119,6 +119,34 @@ const deleteAccountById = (req, res) => {
 //put 201
 const updateAccount = async(req, res) => {
     const id = parseInt(req.params.id);
+    const { display_name, role_id } = req.body;
+    pool.query(queries.getAccountById, [id], (error, results) => {
+        try {
+            const noAccountFound = !results.rows.length;
+            if (noAccountFound) {
+                res.status(202).json("Account does not exist in the database");
+            } else {
+                pool.query(
+                    queries.updateAccount, [id, display_name, role_id],
+                    (error, results) => {
+                        try {
+                            if (error) throw error;
+                            res.status(201).send("Account updated Successfully!");
+                        } catch (err) {
+                            res.status(203).json({ error: "Error Database! " + err });
+                        }
+                    }
+                );
+            }
+        } catch (err) {
+            console.log("catch: " + err);
+            res.status(203).json({ error: "Error Database! " + err });
+        }
+    });
+};
+//put 201
+const updateAccountPW = async(req, res) => {
+    const id = parseInt(req.params.id);
     const { display_name, pass_word, role_id } = req.body;
     const encryptedPassword = await tools.GetEncryptedPassword(pass_word);
     pool.query(queries.getAccountById, [id], (error, results) => {
@@ -128,7 +156,7 @@ const updateAccount = async(req, res) => {
                 res.status(202).json("Account does not exist in the database");
             } else {
                 pool.query(
-                    queries.updateAccount, [id, display_name, encryptedPassword, role_id],
+                    queries.updateAccountPW, [id, display_name, encryptedPassword, role_id],
                     (error, results) => {
                         try {
                             if (error) throw error;
@@ -152,4 +180,5 @@ module.exports = {
     addAccount,
     deleteAccountById,
     updateAccount,
+    updateAccountPW,
 };

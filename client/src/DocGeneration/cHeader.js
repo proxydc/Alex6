@@ -125,7 +125,7 @@ class cHeader {
                     type: "png",
                     data: docData.urlToBlob(enumImg.Logo1),
                     transformation: {
-                        width: 75,
+                        width: 65,
                         height: 105,
                     },
 

@@ -3,7 +3,8 @@ const getAccounts = "select a.*, r.role_name from account a, role r where a.role
 const getAccountById = "select * from account where id = $1";
 const checkLoginExists = "select * from account a where a.login_name = $1";
 const addAccount = "insert into account(login_name, display_name, pass_word, role_id) values ($1, $2, $3, $4)";
-const updateAccount = "update account set display_name = $2, pass_word = $3, role_id = $4 where id = $1";
+const updateAccountPW = "update account set display_name = $2, pass_word = $3, role_id = $4 where id = $1";
+const updateAccount = "update account set display_name = $2, role_id = $3 where id = $1";
 const deleteAccountById = "delete from account where id = $1";
 const getAuthentification = "select * from account a where a.login_name = $1 and a.pass_word = $2";
 
@@ -30,6 +31,7 @@ module.exports = {
     checkLoginExists,
     addAccount,
     updateAccount,
+    updateAccountPW,
     deleteAccountById,
 
     getDCs,

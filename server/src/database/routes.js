@@ -1,12 +1,13 @@
 const { Router } = require("express");
 const controller = require("./controllerAccount");
 const controllerDC = require("./controllerDC");
-const router =  Router();
+const router = Router();
 router.post("/account", controller.getAuthentification);
 router.get("/account", controller.getAccounts);
 router.post("/account/add", controller.addAccount);
 router.get("/account/:id", controller.getAccountById);
 router.put("/account/:id", controller.updateAccount);
+router.put("/accountpw/:id", controller.updateAccountPW);
 router.delete("/account/:id", controller.deleteAccountById);
 
 
