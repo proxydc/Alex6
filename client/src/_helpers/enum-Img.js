@@ -7,13 +7,11 @@ const BulletImage = Object.freeze({
     Titlecomp: "https://raw.githubusercontent.com/proxydc/Templates/main/comp.png",
     Bref: "https://raw.githubusercontent.com/proxydc/Templates/main/bref.png",
     Cert: "https://raw.githubusercontent.com/proxydc/Templates/main/cert.png",
-    HL: "https://raw.githubusercontent.com/proxydc/Templates/main/HLine.png",
     Logo1: "https://raw.githubusercontent.com/proxydc/Templates/main/logo.png",
     Logo2: "https://raw.githubusercontent.com/proxydc/Templates/main/logo1stpage.png",
     HeaderGauche: "https://raw.githubusercontent.com/proxydc/Templates/main/HeaderGauche.png",
     FooterBG: "https://raw.githubusercontent.com/proxydc/Templates/main/FooterBG.png",
     DocumentBG: "https://raw.githubusercontent.com/proxydc/Templates/main/DocumentBG.png",
-    Rose: "https://raw.githubusercontent.com/proxydc/Templates/main/green.png",
 });
 
 export default BulletImage;

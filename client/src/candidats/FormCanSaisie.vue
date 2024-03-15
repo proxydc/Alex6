@@ -131,7 +131,7 @@
             </div>
           </div>
 
-          <div class="row dc-section">
+         <!-- <div class="row dc-section">
             <div class="col">
               <h5>En bref</h5>
               <textarea
@@ -140,7 +140,7 @@
                 v-model="dc.document.bref"
               ></textarea>
             </div>
-          </div>
+          </div>-->
 
           <div class="row dc-section">
             <div class="col text-center">

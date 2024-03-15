@@ -1,9 +1,9 @@
 
 //const getDocumentTemplate = '{"technicalAbilities": [], "functionalAbilities": [], "languages": [], "certifications": [], "bref": "", "experiences": [], "projects": [], "skills": { "environments": "", "languages": "", "databases": "", "tools": "", "systems": "" }}'
 
-function GetDocTemp(familyname, firstname, email){
+function GetDocTemp(){
 
-    return '{"familyname": "'+familyname+'", "firstname": "'+firstname+'", "email": "'+email+'", "technicalAbilities": [], "functionalAbilities": [], "languages": [], "certifications": [], "bref": "", "experiencesPro": [], "projectsPerso": [], "skills": { "environments": "", "languages": "", "databases": "", "tools": "", "systems": "" }}'
+    return '{"technicalAbilities": [], "functionalAbilities": [], "languages": [], "certifications": [], "experiencesPro": [], "projectsPerso": [], "skills": { "environments": "", "languages": "", "databases": "", "tools": "", "systems": "" }}'
 }
 
 module.exports = {
